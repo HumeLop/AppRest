@@ -13,7 +13,6 @@ export class UsuarioComponent {
   constructor(private router: ActivatedRoute, private apiUsers: ApiUsersService){
 
     this.router.params.subscribe(params =>{
-      console.log(params)
       this.getPeronaje(params['id']);
     });
 
@@ -22,7 +21,6 @@ export class UsuarioComponent {
   getPeronaje(id: string) {
     this.apiUsers.getPersonaje(id)
     .subscribe( personajeApi =>{
-      console.log(personajeApi)
       this.personaje = personajeApi;
     });
   }
