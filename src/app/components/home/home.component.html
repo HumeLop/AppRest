@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div *ngFor="let personaje of personajes" class="col-sm-3 mb-sm-5">
+          <div class="card">
+            <img class="img_perfil" [src]="personaje.image" class="card-img-top" alt="personaje">
+            <div class="card-body">
+              <h5 class="card-title">{{personaje.name }}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{personaje.species}}</li>
+                <li class="list-group-item">{{personaje.status}}</li>
+                <li class="list-group-item">{{personaje.location.name}}</li>
+                <li class="list-group-item">{{personaje.origin.name}}</li>
+              </ul>
+              <br>
+              <div class="d-grid gap-2 col-6 mx-auto">
+                <a (click)="getPersonaje(personaje)" class="btn btn-primary">Ver imagen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
